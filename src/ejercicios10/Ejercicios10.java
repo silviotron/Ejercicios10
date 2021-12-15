@@ -68,17 +68,13 @@ public class Ejercicios10 {
     public static void ejercicio01(){
         System.out.print("Introduce una string: ");
         String s = sc.nextLine();
-        Pattern pat = Pattern.compile("^[aA]");
-        Matcher mat = pat.matcher(s);
-        System.out.println(mat.find()?"Empieza por a":"no empieza por a");
+        System.out.println(Pattern.matches("^[aA]+*",s)?"Empieza por a":"no empieza por a");
     }
     
     public static void ejercicio02(){
         System.out.print("Introduce una string: ");
         String s = sc.nextLine();
-        Pattern pat = Pattern.compile("^[aA]&&[\\d]$");
-        Matcher mat = pat.matcher(s);        
-        System.out.println(mat.find()
+        System.out.println(Pattern.matches("^[aA].*[\\d]$",s)
                 ?"Empieza por a y termina en numero"
                 :"no empieza por a ni termina en numero ");
 
@@ -87,7 +83,7 @@ public class Ejercicios10 {
     public static void ejercicio03(){
         System.out.print("Introduce una string: ");
         String s = sc.nextLine();
-        System.out.println(s.charAt(0) != '$' && !Character.isDigit(s.charAt(0))
+        System.out.println(Pattern.matches("^[$\\d]+",s)
                 ?"No empieza por $ ni por un digito"
                 :"Empieza por $ o por un digito");        
         
