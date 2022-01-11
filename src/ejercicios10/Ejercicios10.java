@@ -38,6 +38,7 @@ public class Ejercicios10 {
             System.out.println("*********************************************");
             entradaUsuario = sc.nextLine();
             String s = "";
+            String[] array;
             switch(entradaUsuario){
                 case "1":
                     System.out.print("Introduce una string: ");
@@ -56,13 +57,13 @@ public class Ejercicios10 {
                     break;
                 case "4":
                     System.out.print("Introduce una string: ");
-                    s = sc.nextLine();        
-                    System.out.println(Pattern.matches("[aAbBcC]{3}",s));
+                    s = sc.nextLine(); 
+                    System.out.println(!Pattern.compile("\\b[aAbBcC]{3}\\b").matcher(s).find());
                     break;
                 case "5":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(!Pattern.matches("[1-9][0-9]",s));
+                    System.out.println(!Pattern.matches(".*\\b[1-9][0-9]\\b.*",s));
                     break;
                 case "6":
                     System.out.print("Introduce una string: ");
@@ -72,45 +73,72 @@ public class Ejercicios10 {
                 case "7":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("[A-Za-z]{5,10}",s));
+                    System.out.println(Pattern.matches("\\b[A-Za-z]{5,10}",s));
                     break;
                 case "8":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches(".*\\.docx|.*\\.doc",s));
+                    array = s.trim().split(" +");
+                for (String matricula : array) {
+                    System.out.printf("%s: %s\n", matricula, Pattern.matches("^[\\d]{4}[A-Z]{3}$", matricula));
+                }
                     break;
+
                 case "9":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches(".*[aA].*[eE].*[iI].*[oO].*[uU].*",s));
-                    System.out.println(Pattern.matches(".*[aA][^eEiIoOuU]*[eE][^iIoOuU]*[iI][^oOuU]*[oO][^uU]*[uU].*",s));
-                    break;
+                    array = s.trim().split(" +");
+                for (String matricula : array) {
+                    System.out.printf("%s: %s\n", matricula, Pattern.matches("\\b[\\d]{7,8}[A-Z]\\b", matricula));
+                }
+                    break;                    
+                    
                 case "10":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(Pattern.matches(".*\\.docx|.*\\.doc",s));
                     break;
                 case "11":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(Pattern.matches(".*[aA][^eEiIoOuU]*[eE][^aAiIoOuU]*[iI][^aAeEoOuU]*[oO][^aAeEiIuU]*[uU][^aAeEiIoO]*.*",s));
                     break;
                 case "12":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(Pattern.matches("[A-Z]{3}[\\d]{3}[AEOFM]",s));
                     break;
                 case "13":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(Pattern.matches(".*\\.$",s));
                     break;
                 case "14":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(s.replaceAll("[\\d]{4}", "****"));
                     break;
                 case "15":
+                    System.out.print("Introduce una string: ");
+                    s = sc.nextLine();
+                    System.out.println(Pattern.matches("EXPRESION",s));
+                    break;
+                case "16":
+                    System.out.print("Introduce una string: ");
+                    s = sc.nextLine();
+                    System.out.println(Pattern.matches("EXPRESION",s));
+                    break;
+                case "17":
+                    System.out.print("Introduce una string: ");
+                    s = sc.nextLine();
+                    System.out.println(Pattern.matches("EXPRESION",s));
+                    break;
+                case "18":
+                    System.out.print("Introduce una string: ");
+                    s = sc.nextLine();
+                    System.out.println(Pattern.matches("EXPRESION",s));
+                    break;
+                case "19":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
                     System.out.println(Pattern.matches("EXPRESION",s));
