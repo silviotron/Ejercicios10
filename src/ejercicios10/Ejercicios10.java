@@ -22,20 +22,28 @@ public class Ejercicios10 {
     public static void main(String[] args) {
         String entradaUsuario;
         do{
-            System.out.println("*********************************************");
-            System.out.println("*  1. empieza por A                         *");
-            System.out.println("*  2. empieza por A y acaba en número       *");
-            System.out.println("*  3. no empieza por $ o digito             *");
-            System.out.println("*  4.                                       *");
-            System.out.println("*  5.                                       *");
-            System.out.println("*  6.                                       *");
-            System.out.println("*  7.                                       *");
-            System.out.println("*  8.                                       *");
-            System.out.println("*  9.                                       *");
-            System.out.println("* 10.                                       *");
-            System.out.println("* 11.                                       *");
-            System.out.println("*  0. Salir                                 *");
-            System.out.println("*********************************************");
+            System.out.println("*********************************************************************");
+            System.out.println("*  1. empieza por A                                                 *");
+            System.out.println("*  2. empieza por A y acaba en número                               *");
+            System.out.println("*  3. no empieza por $ o digito                                     *");
+            System.out.println("*  4. no tiene una palabra de tres letras compuesta por a, b o c    *");
+            System.out.println("*  5. no contiene un número entre 10 y 99                           *");
+            System.out.println("*  6. 4 números y 2 letras mayús                                    *");
+            System.out.println("*  7. existe una palabra entre 5 y 10 letras                        *");
+            System.out.println("*  8. verificación matrículas                                       *");
+            System.out.println("*  9. verificación DNIs                                             *");
+            System.out.println("* 10. extension .doc o .docx                                        *");
+            System.out.println("* 11. contiene las 5 vocales en orden                               *");
+            System.out.println("* 12. 3 letras Mayus, 3 digitos y 1 letra(A, E, O, F, M)            *");
+            System.out.println("* 13. termina en .                                                  *");
+            System.out.println("* 14. remplaza numeros de 4 digitos por ****                        *");
+            System.out.println("* 15. 4 o 5 mayús, 1 guión, 3 cifras, 1 guión y 2 cifras            *");
+            System.out.println("* 16. remplazar todo que no sean ni numeros ni letras ni _ por _    *");
+            System.out.println("* 17. validación fecha                                              *");
+            System.out.println("* 18. limpiar string                                                *");
+            System.out.println("* 19. validación ip                                                 *");
+            System.out.println("*  0. Salir                                                         *");
+            System.out.println("*********************************************************************");
             entradaUsuario = sc.nextLine();
             String s = "";
             String[] array;
@@ -131,7 +139,7 @@ public class Ejercicios10 {
                 case "17":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("([1-9]|[0-2][0-9]|3[01])/([1-9]|[0-1][0-9])/(\\d|[1-9]\\d|[1-9]\\d{2}|[1-9]\\d{3})",s));
+                    System.out.println(Pattern.matches("(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|[1][012])/(\\d|[1-9]\\d|[1-9]\\d{2}|[1-9]\\d{3})",s));
                     break;
                 case "18":
                     System.out.print("Introduce una string: ");
@@ -142,7 +150,7 @@ public class Ejercicios10 {
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
                     String ip = "(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d||25[0-5])";
-                    System.out.println(Pattern.matches(ip + "\\." + ip + "\\." + ip + "\\." + ip,s));
+                    System.out.println(Pattern.matches(ip + "\\." + ip + "\\." + ip + "\\." + ip,s));                   
                     break;
                 case "0":
                     break;
