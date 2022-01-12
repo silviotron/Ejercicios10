@@ -48,7 +48,7 @@ public class Ejercicios10 {
                 case "2":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("^[aA].*[\\d]$",s));
+                    System.out.println(Pattern.matches("^[aA].*\\d$",s));
                     break;
                 case "3":
                     System.out.print("Introduce una string: ");
@@ -80,7 +80,7 @@ public class Ejercicios10 {
                     s = sc.nextLine();
                     array = s.trim().split(" +");
                 for (String matricula : array) {
-                    System.out.printf("%s: %s\n", matricula, Pattern.matches("^[\\d]{4}[A-Z]{3}$", matricula));
+                    System.out.printf("%s: %s\n", matricula, Pattern.matches("^\\d{4}[A-Z]{3}$", matricula));
                 }
                     break;
 
@@ -89,7 +89,7 @@ public class Ejercicios10 {
                     s = sc.nextLine();
                     array = s.trim().split(" +");
                 for (String matricula : array) {
-                    System.out.printf("%s: %s\n", matricula, Pattern.matches("\\b[\\d]{7,8}[A-Z]\\b", matricula));
+                    System.out.printf("%s: %s\n", matricula, Pattern.matches("\\b\\d{7,8}[A-Z]\\b", matricula));
                 }
                     break;                    
                     
@@ -101,12 +101,12 @@ public class Ejercicios10 {
                 case "11":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches(".*[aA][^eEiIoOuU]*[eE][^aAiIoOuU]*[iI][^aAeEoOuU]*[oO][^aAeEiIuU]*[uU][^aAeEiIoO]*.*",s));
+                    System.out.println(Pattern.matches("[^aAeEiIoOuU]*[aA][^eEiIoOuU]*[eE][^aAiIoOuU]*[iI][^aAeEoOuU]*[oO][^aAeEiIuU]*[uU][^aAeEiIoO]*[^aAeEiIoOuU]*",s));
                     break;
                 case "12":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("[A-Z]{3}[\\d]{3}[AEOFM]",s));
+                    System.out.println(Pattern.matches("[A-Z]{3}\\d{3}[AEOFM]",s));
                     break;
                 case "13":
                     System.out.print("Introduce una string: ");
@@ -116,32 +116,33 @@ public class Ejercicios10 {
                 case "14":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(s.replaceAll("[\\d]{4}", "****"));
+                    System.out.println(s.replaceAll("\\b\\d{4}\\b", "****"));
                     break;
                 case "15":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(Pattern.matches("[A-Z]{4,5}-\\d{3}-\\d{2}",s));
                     break;
                 case "16":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(s.replaceAll("[^\\w]", "_"));
                     break;
                 case "17":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(Pattern.matches("([1-9]|[0-2][0-9]|3[01])/([1-9]|[0-1][0-9])/(\\d|[1-9]\\d|[1-9]\\d{2}|[1-9]\\d{3})",s));
                     break;
                 case "18":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    System.out.println(s.replaceAll("[^A-Za-z\\d]", ""));
                     break;
                 case "19":
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
-                    System.out.println(Pattern.matches("EXPRESION",s));
+                    String ip = "(\\d|[1-9]\\d|1\\d{2}|2[0-4]\\d||25[0-5])";
+                    System.out.println(Pattern.matches(ip + "\\." + ip + "\\." + ip + "\\." + ip,s));
                     break;
                 case "0":
                     break;
@@ -152,6 +153,7 @@ public class Ejercicios10 {
         }while(!entradaUsuario.equals("0"));         
     }
     
+    //Esto no es nada solo me gusta como queda
     public static void ejercicio01(){
         System.out.print("Introduce una string: ");
         String s = sc.nextLine();
