@@ -150,8 +150,8 @@ public class Ejercicios10 {
                     System.out.print("Introduce una string: ");
                     s = sc.nextLine();
                     String ip = "(0?0?\\d|0?[1-9]\\d|1\\d{2}|2[0-4]\\d||25[0-5])";
-                    System.out.println(s.replaceAll("((?<![1-9])0(?=\\d))", ""));
-                    System.out.println(Pattern.matches(ip + "\\." + ip + "\\." + ip + "\\." + ip,s));   //000.023.003.202                
+                    System.out.println(s.replaceAll("((?<![1-9]0*)0(?=\\d))", ""));
+                    System.out.println(Pattern.matches(ip + "\\." + ip + "\\." + ip + "\\." + ip,s));              
                     break;
                 case "0":
                     break;
